@@ -1,0 +1,23 @@
+- rest:
+    id: rest-b6de
+    get:
+      - id: get-77a6
+        path: hello
+        to: direct:helloworld
+- route:
+    id: route-035b
+    from:
+      uri: direct
+      id: from-683f
+      parameters:
+        name: helloworld
+      steps:
+        - log:
+            message: hello from karavan
+            id: log-a520
+        - setBody:
+            id: setBody-6b7a
+            expression:
+              constant:
+                expression: hello from karavan
+                id: constant-38e1
